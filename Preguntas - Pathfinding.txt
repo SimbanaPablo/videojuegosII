@@ -1,0 +1,171 @@
+1. ¿Cuál es el objetivo principal del proceso de Pathfinding en la inteligencia artificial?
+
+A) Generar mapas aleatorios para videojuegos.
+B) Encontrar el camino más eficiente entre un punto de inicio y un destino.
+C) Clasificar imágenes mediante redes neuronales.
+D) Almacenar bases de datos de ubicaciones geográficas.
+
+Respuesta: B
+
+2. En la fórmula del algoritmo A*, que es f(n) = g(n) + h(n), ¿qué representa g(n)?
+A) El coste real desde el nodo inicial hasta el nodo n.
+B) La estimación heurística desde n hasta el objetivo.
+C) El coste total estimado de la ruta.
+D) El número de nodos visitados.
+
+Respuesta: A
+
+3. ¿Qué tipo de distancia heurística es ideal para movimientos en cuadrícula que solo permiten desplazamientos horizontales y verticales (sin diagonales)?
+A) Distancia Euclidiana.
+B) Distancia Manhattan.
+C) Distancia Chebyshev.
+D) Distancia de Hamming.
+
+Respuesta: B
+
+4. ¿Cuál de las siguientes NO es una aplicación común del Pathfinding en la vida real o en la IA?
+A) Diseño gráfico vectorial automatizado.
+B) Robots autónomos (como aspiradoras).
+C) Movimiento de NPCs en videojuegos.
+D) Enrutamiento de paquetes de datos en redes.
+
+Respuesta: A
+
+5. El algoritmo BFS (Búsqueda en Anchura) garantiza encontrar el camino más corto bajo una condición específica. ¿Cuál es esa condición?
+A) Solo funciona en entornos 3D.
+B) Solo si la ruta más corta tiene un coste fijo.
+C) Si todos los movimientos (aristas del grafo) tienen exactamente el mismo coste.
+D) Si se utiliza una heurística admisible.
+
+Respuesta: C
+
+6. ¿Bajo qué condición se considera que una heurística es 'admisible' en algoritmos como A*?
+A) Si siempre subestima el coste real.
+B) Si sobreestima el coste real en menos del 10%.
+C) Si la heurística es idéntica al coste real.
+D) Si nunca sobreestima el coste real para llegar al destino.
+
+Respuesta: D
+
+7. ¿En qué situación es el algoritmo de Dijkstra preferible al BFS (Búsqueda en Anchura)?
+A) Cuando se necesita la solución más rápida de calcular.
+B) Cuando los nodos son infinitos.
+C) Cuando no se permite el uso de heurísticas.
+D) Cuando las aristas del grafo tienen diferentes 'pesos' o costes.
+
+Respuesta: D
+
+8. A diferencia de BFS, el algoritmo de Dijkstra utiliza una estructura de datos específica para evaluar constantemente la ruta más barata disponible. ¿Cuál es esta estructura?
+A) Una pila (Stack).
+B) Un arreglo de coste fijo (Array).
+C) Un árbol binario.
+D) Una Cola de Prioridad (Priority Queue).
+
+Respuesta: D
+
+9. En la gestión de nodos de A*, ¿qué almacena principalmente la 'Lista Cerrada' (Closed List)?
+A) Los nodos que están pendientes de ser evaluados (la frontera).
+B) Los nodos adyacentes al nodo de inicio.
+C) Los nodos que ya han sido completamente procesados y evaluados.
+D) La ruta final encontrada hasta el destino.
+
+Respuesta: C
+
+10. En la Teoría de Grafos aplicada a Pathfinding, ¿qué elemento representa las conexiones entre nodos y suele tener un coste o 'peso' asociado?
+A) Los vértices o nodos.
+B) Las listas de prioridad.
+C) Las coordenadas cartesianas.
+D) Las aristas (Edges).
+
+Respuesta: D
+
+11. ¿Qué volumen es esencial agregar al nivel para que la IA pueda moverse y navegar por el entorno?
+
+A) Nav Mesh Bounds Volume.
+B) Trigger Volume.
+C) Post Process Volume.
+D) Blocking Volume.
+
+Respuesta: A
+
+
+12. ¿Cuál es la función principal de un Blackboard en el sistema de IA?
+
+A) Definir el flujo lógico de las decisiones.
+B) Almacenar variables y memoria compartida para la IA.
+C) Controlar las animaciones del personaje.
+D) Poseer al peón enemigo.
+
+Respuesta: B
+
+13. En un Behavior Tree, ¿qué nodo ejecuta sus tareas hijas de izquierda a derecha y falla inmediatamente si una de ellas falla?
+
+A) Sequence.
+B) Task.
+C) Selector.
+D) Service.
+
+Respuesta: A
+
+14. ¿En qué clase Blueprint se debe llamar a la función 'Run Behavior Tree' para iniciar la lógica del enemigo?
+
+A) AI Controller.
+B) Level Blueprint.
+C) Game Mode.
+D) Animation Blueprint.
+
+Respuesta: A
+
+15. ¿Qué elemento del Behavior Tree se utiliza para verificar una condición (como '¿Tiene espada?') antes de permitir ejecutar una rama o tarea?
+
+A) Composite.
+B) Task.
+C) Decorator.
+D) Root.
+
+Respuesta: C
+
+16. Para que el enemigo sostenga un arma física en su mano, ¿qué punto de anclaje creamos en el esqueleto?
+
+A) Constraint.
+B) Collision Box.
+C) Virtual Bone.
+D) Socket.
+
+Respuesta: D
+
+17. ¿Cuál es la tarea nativa de Unreal que permite al personaje caminar hacia un objetivo usando el NavMesh?
+
+A) Teleport.
+B) Rotate to Face BB Entry.
+C) Move To.
+D) Add Movement Input.
+
+Respuesta: C
+
+18. Si quieres crear una acción personalizada para tu enemigo, como 'Atacar' o 'Buscar Punto Aleatorio', debes crear una nueva...
+
+A) Blueprint Interface.
+B) Animation Montage.
+C) Game Instance.
+D) Blueprint Base Task.
+
+Respuesta: D
+
+19. ¿Qué problema soluciona el 'Retargeting' de animaciones?
+
+A) Hace que el enemigo tenga mejor puntería al atacar.
+B) Permite usar animaciones de un esqueleto (ej. Mixamo) en otro diferente (ej. Unreal Mannequin).
+C) Optimiza el juego para que vaya a más FPS.
+D) Evita que la IA choque con las paredes.
+
+Respuesta: B
+
+20. Al configurar un nodo 'Move To', ¿qué define el parámetro 'Acceptance Radius'?
+
+A) El radio de visión del enemigo.
+B) La velocidad máxima a la que puede correr.
+C) La distancia a la que la IA se detendrá antes de chocar con el objetivo.
+D) El tiempo que esperará al llegar.
+
+Respuesta: C

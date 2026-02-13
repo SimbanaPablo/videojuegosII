@@ -1,0 +1,139 @@
+¿Cuál es el propósito fundamental de la técnica de billboarding en el desarrollo de videojuegos?
+A. Crear una malla tridimensional compleja para simular vegetación realista con alto detalle.
+B. Optimizar la iluminación global mediante el uso de mapas de sombras estáticos en el escenario.
+C. Alinear un plano 2D para que su cara frontal siempre esté orientada hacia la cámara del jugador.
+D. Reducir el tamaño de las texturas en el disco para mejorar los tiempos de carga del nivel.
+ANSWER: C
+
+En un script de Unity escrito en C#, ¿cuál es el enfoque más común para lograr que un objeto siga la rotación de la cámara?
+A. Emplear el método transform.LookAt() pasando como argumento la posición de la cámara principal en el método LateUpdate.
+B. Sobrescribir el método OnCollisionEnter() para detectar cuándo la cámara entra en contacto con el objeto.
+C. Usar una corrutina que cambie el color del material dependiendo de la distancia a la cámara.
+D. Modificar la propiedad transform.localScale para que el objeto se agrande cuando la cámara se aleja.
+ANSWER: A
+
+Si al aplicar el código de Billboarding a un Quad la textura se ve invertida (por la espalda), ¿qué ajuste lógico suele realizarse en el cálculo de la rotación?
+A. Cambiar el material de Transparent a Opaque
+B. Eliminar el componente MeshFilter
+C. Desactivar la cámara principal
+D. Sumar 180 grados al eje de rotación vertical
+ANSWER: D
+
+En el script de Billboarding que se implemento, ¿qué función de C# se utiliza para orientar el eje frontal del objeto hacia la posición de la cámara?
+A. transform.Rotate
+B. Vector3.MoveTowards
+C. Quaternion.Identity
+D. transform.LookAt
+ANSWER: D
+
+¿Por qué es una buena práctica ejecutar el código de Billboarding en el método LateUpdate()?
+A. Para asegurar que la cámara ya se haya movido en ese frame antes de rotar el objeto
+B. Porque LateUpdate consume menos recursos de memoria que Update
+C. Porque el sistema de física de Unity solo permite rotaciones en este método
+D. Para permitir que las texturas se carguen antes de la rotación
+ANSWER: A
+
+¿Qué algoritmo de búsqueda es la base estándar utilizada por el sistema de navegación de Unity para calcular la ruta más corta en el grafo topológico?
+A. A (A-Star)* (Correcta)
+B. Dijkstra
+C. Floyd-Warshall
+D. Greedy Best-First Search
+ANSWER: A
+
+¿Qué propiedad del componente NavMeshAgent modificarías en código para controlar qué tan rápido gira el agente sobre su propio eje?
+A. angularSpeed (Correcta)
+B. rotationRate
+C. turnSpeed
+D. updateRotation
+ANSWER: A
+
+En teoría de grafos para videojuegos, ¿cómo se le llama a la región o polígono definido donde un agente puede moverse libremente?
+A. Espacio de obstáculos
+B. Colisionador de Malla (Mesh Collider)
+C. Área navegable (Walkable Area) 
+D. Volumen de NavMesh
+ANSWER: C
+
+¿Cuál es el método correcto en C# para ordenarle a un agente que se mueva hacia una posición específica en el mapa?
+A. transform.position = vector;
+B. transform.position
+C. navMesh.CalculatePath(vector);
+D. agent.SetDestination(vector); 
+ANSWER: D
+
+¿Qué componente de Unity se utiliza para permitir que un agente pueda moversae sobre el escenario?
+A. Tilemap Collider
+B. Obstacle object
+C. Topology acces
+D. NavMesh
+ANSWER: D
+
+¿Cuál es la diferencia estructural principal entre un Skybox clásico y un Skydome?
+A. El Skybox es para juegos 2D y el Skydome para juegos 3D.
+B. El Skybox utiliza un cubo de 6 caras texturizadas, mientras que el Skydome usa una semiesfera para suavizar el horizonte.
+C. El Skybox genera nubes reales con física, mientras que el Skydome son solo fotos estáticas.
+D. No hay diferencia, son dos nombres para la misma técnica de iluminación.
+ANSWER: B
+
+¿Qué componente fue esencial para crear el cielo dinámico en lugar de usar una textura estática?
+A. El componente "Mesh Renderer" del plano del suelo.
+B. Una textura .jpg arrastrada al fondo de la cámara.
+C. El "Physically Based Sky" dentro de un Global Volume.
+D. El sistema de partículas simulando nubes.
+ANSWER: C
+
+¿Qué se usó para lograr que el cielo cambiara de color (amanecer, día, noche) durante la ejecución del proyecto de skybox?
+A. Cambiando manualmente el material del cielo cada 5 segundos mediante un script.
+B. Rotando la "Directional Light" que estaba vinculada al sistema de Sol en el entorno (Lighting Settings).
+C. Utilizando una niebla negra que cubre la cámara progresivamente.
+D. El cielo en Unity 6 cambia solo según la hora del reloj de tu computadora.
+ANSWER: B
+
+¿Qué aspecto se mejora al seleccionar la opción “Screen Space Occlusion” en la creación del efecto del rayo del sol?
+A. Los personajes no pueden caminar sobre objetos planos.
+B. Evitar que la luz del sol "traspasara" el suelo e iluminara la parte inferior del mapa cuando era de noche. 
+C. Genera sombras de contacto en las uniones y esquinas, evitando que los objetos parezcan "flotar" sobre el suelo.
+D. Bloquea físicamente los rayos del sol para que no atraviesen las paredes delgadas.
+ANSWER: B
+
+¿En qué casos es prefiere usar Skybox (Cubo con texturas) en lugar del Skydome Procedural?
+A. En un juego de mundo abierto tipo "Red Dead Redemption" para máximo realismo.
+B. Cuando necesito ahorrar rendimiento o para un juego espacial donde no hay horizonte ni atmósfera.
+C. Cuando quiero que las nubes se muevan con el viento en tiempo real.
+D. Cuando necesito que el ciclo de día y noche sea completamente dinámico.
+ANSWER: B
+
+¿Cuál es la diferencia principal entre Raycasting y Raytracing?
+A. El Raycasting detecta la primera colisión lineal, mientras que el Raytracing simula rebotes y comportamiento de la luz
+B. El Raycasting no requiere procesador (CPU) y el Raytracing sí
+C. El Raycasting solo funciona en 2D y el Raytracing es exclusivo de 3D
+D. Raycasting es para sonidos y Raytracing es para gráficos
+ANSWER: A
+
+¿Qué función cumple la estructura RaycastHit en la lógica de disparos o interacción?
+A. Almacenar información detallada sobre el impacto, como el punto exacto y el objeto golpeado
+B. Aumentar el rendimiento del motor de física
+C. Cambiar automáticamente el color de los materiales al ser golpeados
+D. Definir la dirección hacia la cual se disparará el rayo
+ANSWER: A
+
+En el código Physics.Raycast(rayo, out golpe, distancia), ¿qué significa el parámetro out?
+A. Sirve para ignorar las colisiones que estén fuera del rango de distancia
+B. Especifica que el rayo debe dispararse hacia fuera de la pantalla
+C. Indica que la variable 'golpe' recibirá los datos de salida calculados por la función
+D. Indica que el rayo es de tipo 'saliente' y no puede rebotar
+ANSWER: C
+
+¿Qué método se utiliza para crear un Rayo que parta desde la cámara y atraviese el centro exacto de la pantalla (mirilla)?
+A. Camera.main.ScreenToWorldPoint(Input.mousePosition)
+B. Physics.GetRayFromCenter()
+C. Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0))
+D. new Ray(Vector3.zero, Vector3.forward)
+ANSWER: C
+
+Para visualizar la trayectoria de un Raycast únicamente en la ventana de 'Scene' durante el desarrollo, ¿qué comando de depuración es el correcto?
+A. print("Rayo disparado")
+B. Debug.DrawRay(origen, direccion * distancia, Color.red)
+C. Physics.VisibleRay = true
+D. lineRenderer.SetPosition(0, origen)
+ANSWER: B

@@ -1,0 +1,61 @@
+Resumen de los cambios:
+
+Constantes: He creado una clase Constants para definir PIXELS_IN_METERS y así tener una referencia clara entre las unidades de Box2D y las de pantalla.
+
+PlayerEntity:
+Ahora, el cuerpo Box2D y el actor tienen un tamaño coherente.
+La posición se actualiza correctamente en draw.
+Se agregó un método jump() para la lógica de salto.
+
+ObstacleEntity:
+El BodyType se ha cambiado a StaticBody si la roca no se moverá. Si necesitas que sea dinámica, ajústalo.
+El tamaño del actor se ajusta según el tamaño del cuerpo Box2D.
+
+SueloEntity:
+El tamaño de la forma del suelo (setAsBox) y el actor se han ajustado para que el suelo sea más ancho y se vea como tal.
+La posición se actualiza correctamente en draw.
+
+GameScreen:
+He activado el ContactListener y lo he implementado en la clase interna WorldContactListener para manejar las colisiones entre el jugador y el suelo, permitiendo el salto.
+La lógica de salto se ha habilitado y ahora usa el ContactListener para verificar si el jugador está en el suelo.
+Se han ajustado las posiciones iniciales de los objetos para que no se superpongan inicialmente.
+
+Main:
+No hay cambios aquí, solo se carga las texturas.
+
+BaseScreen:
+He creado una clase BaseScreen para tener una base para las pantallas.
+
+Consideraciones importantes:
+Box2D usa metros, GDX usa píxeles: Es crucial mantener esta distinción. PIXELS_IN_METERS te ayuda a traducir entre ambos.
+Origen del Box2D: Box2D trabaja con el centro de los cuerpos. Cuando establezcas setAsBox(halfWidth, halfHeight), recuerda que esos son los "semi-ancho" y "semi-alto".
+Dibujado: Cuando dibujas la textura, setPosition y setSize del Actor deben reflejar las propiedades del Body en unidades de píxeles.
+----------------------------------------------------------------------------------
+
+1. Desplazamiento de la roca:
+
+ObstacleEntity:
+Cambiamos su BodyType a KinematicBody. Los cuerpos cinemáticos no son afectados por la gravedad ni por fuerzas, pero puedes moverlos manualmente. Esto es ideal para plataformas o enemigos que se mueven de forma predecible.
+Agregaremos un método moveLeft() que aplicará una velocidad constante hacia la izquierda.
+
+GameScreen:
+Llamaremos al método moveLeft() del obstáculo en el render() para que se mueva continuamente.
+
+2. Detección de colisión y "GAME OVER":
+
+WorldContactListener (en GameScreen):
+Agregaremos una bandera isGameOver para indicar si el juego ha terminado.
+En beginContact(), si el jugador colisiona con el obstáculo, estableceremos isGameOver = true.
+
+GameScreen:
+Agregaremos un BitmapFont y un SpriteBatch para dibujar el mensaje "GAME OVER".
+En render(), si isGameOver es true, detendremos el mundo de Box2D, mostraremos el 
+mensaje y pausaremos el juego.
+
+Notas importantes:
+KinematicBody para el obstáculo: Al cambiar el BodyType del ObstacleEntity a KinematicBody, Box2D ya no aplicará gravedad ni fuerzas a la roca, lo que nos permite controlarla directamente con setLinearVelocity.
+Posición inicial del obstáculo: He movido la posición inicial del obstáculo en GameScreen a new Vector2(10f, 0.5f) para que esté más a la derecha y tengas tiempo de ver el movimiento antes de la colisión.
+Mensaje "GAME OVER": El texto se dibuja en el centro de la pantalla. Puedes ajustar la escala (font.getData().setScale(2)) y la posición para que se vea como desees.
+Detener el juego: Cuando isGameOver es true, el render deja de actualizar el world.step(), lo que detiene toda la física y el movimiento en el juego.
+Liberar recursos: No olvides hacer dispose() de BitmapFont y SpriteBatch cuando la pantalla ya no se use.
+Con estos cambios, tu roca se moverá y cuando el jugador la toque, aparecerá el mensaje de "GAME OVER". ¡Pruébalo!
